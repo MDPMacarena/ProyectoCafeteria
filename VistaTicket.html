@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pedido</title>
+    <link rel="stylesheet" href="Estilos.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Caffe CSS <img src="Imagenes/Cafe.png" /></h1>
+        <div>
+            <p>Nombre del cliente</p>
+            <p>0000</p>
+        </div>
+    </header>
+    <nav>
+        <h3>Categorias</h3>
+        <ol>
+            <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+            <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+            <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+            <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+        </ol>
+    </nav>
+    <main>
+        <section class="ticket">
+            <div class="tikets">
+                <div>
+                    <p>Productos:</p>
+                    <p>SubTotal:</p>
+                </div>
+                <ol id="pago">
+
+                </ol>
+                <div>
+                    <p>Total:</p>
+                    <i id="total"></i>
+                </div>
+                <div>
+                    <p id="fecha"></p>
+                    <p>Numero de pedido: <i id="pedido"></i></p>
+                </div>
+                <div>
+                    <p>Parallevar? <i id="pregunta"></i></p>
+                    <p id="cliente"></p>
+                </div>
+            </div>
+        </section>
+        <section class="tiket">
+            <input type="button" value="Cerrar" id="btnCerrar" />
+        </section>
+    </main>
+    <script>
+        const numeroPedido = document.getElementById("pedido");
+        const nombreCliente = document.getElementById("cliente");
+        const orden = document.getElementById("pregunta");
+        const fecha = document.getElementById("fecha");
+        const lista = document.getElementById("pago");
+        const totalElement = document.getElementById("total"); 
+        const btnCerrar = document.getElementById("btnCerrar");
+
+       
+        let nom = localStorage.getItem("nombreCliente");
+        let num = localStorage.getItem("contar");
+        let llevar = localStorage.getItem("llevar");
+        let productos = JSON.parse(localStorage.getItem("productos")) || [];
+        let totalCompra = localStorage.getItem("totalCompra");
+
+        const fechaActual = new Date();
+        const opciones = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        const fechaFormateada = fechaActual.toLocaleDateString('es-ES', opciones);
+
+        nombreCliente.textContent = nom;
+        orden.textContent = llevar;
+        numeroPedido.textContent = num;
+        fecha.textContent = fechaFormateada;
+        totalElement.textContent = `$${parseFloat(totalCompra).toFixed(2)}`;
+
+        productos.forEach(producto => {
+            const li = document.createElement("li");
+            const pNombre = document.createElement("p");
+            pNombre.textContent = producto.nombre;
+            const iPrecio = document.createElement("i");
+            iPrecio.textContent = producto.precio;
+            li.appendChild(pNombre);
+            li.appendChild(iPrecio);
+            lista.appendChild(li);
+        });
+
+
+
+        btnCerrar.addEventListener("click", function () {
+            // Eliminar solo productos y totalCompra
+            localStorage.removeItem("llevar");
+            localStorage.removeItem("nombreCliente");
+            localStorage.removeItem("productos");
+            localStorage.removeItem("totalCompra");
+
+            // Redirigir a otra página
+            window.location.href = "index.html"; // Cambia por tu página destino
+        });
+
+
+    </script>
+</body>
+</html>

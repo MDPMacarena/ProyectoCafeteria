@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pedido</title>
+    <link rel="stylesheet" href="Estilos.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Caffe CSS <img src="Imagenes/Cafe.png" /></h1>
+        <div id="on">
+            <p id="nombre"></p>
+            <p id="numPedido"></p>
+        </div>
+    </header>
+    <nav>
+        <h3>Categorias</h3>
+        <ol>
+            <li> <a href="#" id="btncafe"><img src="Imagenes/blanca.png" /></a></li>
+            <li> <a href="#" id="btnfrappe"><img src="Imagenes/frappe.png" /></a></li>
+            <li> <a href="#" id="btnpan"><img src="Imagenes/pan.png" /></a></li>
+            <li> <a href="#" id="btnte"><img src="Imagenes/te.png" /></a></li>
+        </ol>
+    </nav>
+    <main>
+        <section class="menus" id="calientes">
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/americano.png" />
+                <p>Americano</p>
+            </a>
+            <a href="#">
+                <p>$39.00</p>
+                <img src="Imagenes/chocolate.png" />
+                <p>Chocolate </p>
+            </a>
+            <a href="#">
+                <p>$45.00</p>
+                <img src="Imagenes/capuchino.png" />
+                <p>Capuchino</p>
+            </a>
+            <a href="#">
+                <p>$45.00</p>
+                <img src="Imagenes/moka.png" />
+                <p>Moka</p>
+            </a>
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/ollita.png" />
+                <p>Cafe de olla</p>
+            </a>
+            <a href="#">
+                <p>$39.00</p>
+                <img src="Imagenes/expreso.png" />
+                <p>Americano</p>
+            </a>
+        </section>
+        <section class="menus" id="frios">
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/frape1.png" />
+                <p> Frappe de capuchino</p>
+            </a>
+            <a href="#">
+                <p>$40.00</p>
+                <img src="Imagenes/frape2.png" />
+                <p>Frappe de frutos rojos</p>
+            </a>
+            <a href="#">
+                <p>$45.00</p>
+                <img src="Imagenes/frape3.png" />
+                <p>Frappe de chocolate</p>
+            </a>
+            <a href="#">
+                <p>$45.00</p>
+                <img src="Imagenes/frape4.png" />
+                <p>Frappe de mango</p>
+            </a>
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/frape5.png" />
+                <p>Frappe de vainilla</p>
+            </a>
+            <a href="#">
+                <p>$45.00</p>
+                <img src="Imagenes/frape6.png" />
+                <p>Frappe de té verde</p>
+            </a>
+        </section>
+        <section class="menus" id="pan">
+            <a href="#">
+                <p>$15.00</p>
+                <img src="Imagenes/pan1.png" />
+                <p>Mantecadas</p>
+            </a>
+            <a href="#">
+                <p>$20.00</p>
+                <img src="Imagenes/pan2.png" />
+                <p>rol de canela</p>
+            </a>
+            <a href="#">
+                <p>$25.00</p>
+                <img src="Imagenes/pan3.png" />
+                <p>Pan de nata</p>
+            </a>
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/pan4.png" />
+                <p>Pastel de fresas</p>
+            </a>
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/pan5.png" />
+                <p>pastel de chocolate</p>
+            </a>
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/pan6.png" />
+                <p>pay de queso</p>
+            </a>
+        </section>
+        <section class="menus" id="te">
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/te1.png" />
+                <p>Té macha</p>
+            </a>
+            <a href="#">
+                <p>$30.00</p>
+                <img src="Imagenes/te2.png" />
+                <p>Té de manzanilla</p>
+            </a>
+            <a href="#">
+                <p>$25.00</p>
+                <img src="Imagenes/te3.png" />
+                <p>Té negro</p>
+            </a>
+            <a href="#">
+                <p>$35.00</p>
+                <img src="Imagenes/te4.png" />
+                <p>Té de frutos</p>
+            </a>
+            <a href="#">
+                <p>$25.00</p>
+                <img src="Imagenes/te5.png" />
+                <p>Té de canela</p>
+            </a>
+            <a href="#">
+                <p>$30.00</p>
+                <img src="Imagenes/te6.png" />
+                <p>Té de limon</p>
+            </a>
+        </section>
+        <section class="menus" id="sola">
+        </section>
+        <section class="tiket">
+            <div>
+                <p>Productos:</p>
+                <p>SubTotal:</p>
+            </div>
+            <ol>
+               
+            </ol>
+            <div>
+                <p>Total:</p>
+                <p id="total">$000.00</p>
+            </div>
+            <input type="button" value="Pagar" id="btnPagar" />
+        </section>
+    </main>
+    <script src="productosMenu.js"></script>
+   <script>
+       const numPedido = document.getElementById("numPedido");
+       const nombre = document.getElementById("nombre");
+       const btnPagar = document.getElementById("btnPagar");
+       const productos = document.querySelectorAll(".menus a");
+
+
+
+       let nombreCliente = localStorage.getItem("nombreCliente");
+       let numero = localStorage.getItem("contar");
+       numPedido.textContent = numero;
+       nombre.textContent = nombreCliente;
+       function mostrarTicket(producto) {
+           const detalles = producto.querySelectorAll("p");
+           if (detalles.length >= 2) {
+               const precio = detalles[0].textContent.trim();
+               const nombre = detalles[1].textContent.trim();
+               const listaTicket = document.querySelector(".tiket ol");
+               const li = document.createElement("li");
+               li.textContent = `${nombre} `;
+               const precioElemento = document.createElement("i");
+               precioElemento.textContent = precio;
+               const eliminar = document.createElement("a");
+               eliminar.href = "#";
+               eliminar.textContent = " X";
+               li.appendChild(precioElemento);
+               li.appendChild(eliminar);
+               listaTicket.appendChild(li);
+               actualizarTotal();
+           } else {
+               console.warn("Estructura inesperada en el producto:", producto);
+           }
+       }
+       function actualizarTotal() {
+           const precios = document.querySelectorAll(".tiket ol li i");
+           let total = 0;
+           precios.forEach(precio => {
+               total += parseFloat(precio.textContent.replace("$", ""));
+           });
+           const totalElemento = document.getElementById("total");
+           totalElemento.textContent = `$${total.toFixed(2)}`;
+       }
+       function guardarCompra() {
+           const productosTicket = [];
+           const items = document.querySelectorAll(".tiket ol li");
+           items.forEach(item => {
+               const nombre = item.childNodes[0].textContent.trim();
+               const precio = item.querySelector("i").textContent.trim();
+               productosTicket.push({ nombre, precio });
+           });
+           const total = document.getElementById("total").textContent.replace("$", "");
+           localStorage.setItem("productos", JSON.stringify(productosTicket));
+           localStorage.setItem("totalCompra", total);
+       }
+
+       function limpiarTicket() {
+           const listaTicket = document.querySelector(".tiket ol");
+           listaTicket.innerHTML = "";
+           const totalElemento = document.getElementById("total");
+           totalElemento.textContent = "$0.00";
+       }
+       productos.forEach(producto => {
+           producto.addEventListener("click", function (e) {
+               e.preventDefault();
+               mostrarTicket(producto);
+           });
+       });
+
+
+       btnPagar.addEventListener("click", function () {
+           guardarCompra();
+           limpiarTicket(); 
+           window.location.href = "VistaTicket.html"; 
+       });
+
+
+   </script>
+</body>
+</html>

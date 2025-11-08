@@ -1,0 +1,246 @@
+html{
+    font-family:Amita, cursive;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    background-image:url(Imagenes/tabla.jpg);
+    
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+h1,h3{
+    text-align: center;
+    margin: 0px;
+    font-weight: 300;
+}
+body{
+    background-color:#e9e7e79b;
+    border: 1px solid #a3a1a1;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    height:720px;
+    width:80%;
+    margin: 0px auto;
+}
+#on{
+    display:flex;
+}
+header {
+    background-color: #AB886D;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #a3a1a1;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 0px auto;
+    width: 95%;
+}
+header h1{
+    font-size: 20px;
+    width:500px;
+    height:40px;
+    text-align: center;/*hacer un id a la derecha*/
+    align-items: center;
+}
+header img{
+    height: 30px;
+}
+header div{
+    align-items:center;
+    justify-content: space-between;
+    display:none;
+    height:20px;
+    width:500px;
+}
+nav{
+    box-sizing: border-box;
+    width: 95%;
+    margin: 0px auto;
+    margin-top:20px;
+    height:100px;
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    color:#B27731 ;
+    margin-bottom:30px;
+}
+nav h3{
+    text-align: left;
+    font-size:25px;
+}
+nav ol{
+    display: flex;          
+    gap: 20px; 
+    justify-content: center;            
+    list-style: none;        
+    padding: 0;
+    margin: 0;
+}
+nav ol li{
+    width: 100px;
+    height: 80px;
+    background-color: #AB886D;
+}
+nav ol li a{
+    width: 100px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+nav ol li img{
+    width: 50px;
+    height: 50px;
+}
+main{
+    box-sizing:border-box;
+    width:95%;
+    height:500px;
+    margin:0px auto;
+    display:grid;
+    grid-template-columns:3fr 1fr;
+    gap:20px;
+}
+section {
+    background-color: #AB886D;
+    border: 1px solid #a3a1a1;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 5px;
+}
+main .menu {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    justify-content:center;
+    align-items:center;
+}
+main .menu h1{
+    font-size:50px;
+}
+main .menu  .ordenar{
+    display:flex;
+    width:400px;
+    height:300px;
+    flex-direction:column;
+    justify-content:center;
+    gap:10px;
+    text-align:left;
+    align-items:center;
+}
+main .menu .ordenar input{
+    width:350px;
+    padding:10px;
+    background-color:#493628;
+    border:none;
+    color:white;
+}
+main .menu .ordenar input[type="button"]{
+    width:250px;
+}
+main .menu #ordenar p, label{
+    width:350px;
+    padding:0px;
+    text-align:right;
+    margin:0px;
+}
+main .menus {
+    display:grid;
+    justify-items:center;
+    grid-template-columns:repeat(5,1fr);
+    gap:5px;
+}
+main .menus a{
+    display:flex;
+    box-sizing:border-box;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    width:130px;
+    height:200px;
+    padding:0px;
+    margin-top:10px;
+    align-items:center;
+}
+.menus a:hover {
+    background-color: #D6C0B3;
+}
+main .menus img{
+   height:80px;
+   width:80px;
+   margin:0px;
+}
+main .menus p{
+    padding:0px;
+    margin:0px;
+}
+.tiket {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:5px;
+    box-sizing:border-box;
+}
+.tiket div{
+    padding-left:5px;
+    padding-right:5px;
+    display:flex;
+    justify-content:space-between;
+}
+.tiket ol{
+    padding:0px;
+}
+.tiket ol li{
+    list-style:none;
+    display:flex;
+    padding:2px;
+    justify-content:space-between;
+}
+.ticket{
+    display:flex;
+    justify-content:center;
+}
+.tikets {
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    justify-content: space-between;
+    /*gap: 5px;*/
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 3px dashed white;
+    border-bottom: 3px dashed white;
+    background-color: #493628;
+}
+.tikets  div {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.tikets  ol {
+    padding: 0px;
+}
+.tikets ol li {
+        list-style: none;
+        display: flex;
+        padding: 2px;
+        justify-content: space-between;
+    }
+.tiket input {
+    width: 250px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #493628;
+    border: none;
+    color: white;
+}
+#calientes, #frios, #pan, #te{
+    display: none;
+}
+ 

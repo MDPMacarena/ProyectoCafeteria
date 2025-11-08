@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="Estilos.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Caffe CSS <img src="Imagenes/Cafe.png" /></h1>
+        <div>
+            <p>Nombre del cliente</p>
+            <p>0000</p>
+        </div>
+    </header>
+     <nav>
+            <h3>Categorias</h3>
+            <ol>
+                <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+                <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+                <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+                <li> <a href="#"><!--<img src="Imagenes/blanca.png">--></a></li>
+            </ol>
+     </nav>
+     <main>
+        <section class="menu">
+            <h1>Bienvenido</h1>
+            <div class="ordenar">
+                <label>Ingresa tu nombre:</label>
+                <input id="nombre" type="text" required />
+                <label>Para llevar?:</label>
+                <input type="text" id="pedido" required />
+                <p>Numero de pedido: <i id="num"></i></p>
+                <input type="button" value="Realizar Pedido" id="btnContinuar"/>
+            </div>
+        </section>
+         <section class="tiket">
+         </section>
+         <script >
+             const numeroPedisdo = document.getElementById("num");
+             const btnPedir = document.getElementById("btnContinuar");
+             const nombreCliente = document.getElementById("nombre");
+             const pedido = document.getElementById("pedido");
+             btnPedir.addEventListener("click", function () {
+                 let valorActual = localStorage.getItem("contar") || "0";
+                 let nuevo = parseInt(valorActual) + 1;
+                 localStorage.setItem("contar", nuevo.toString());
+                 actualizarNumeroPedido();
+                 let nom = nombreCliente.value.trim();
+                 if (nom) {
+                     localStorage.setItem("nombreCliente", nom);
+                     nombreCliente.value = "";
+                     nombreCliente.focus();
+                 }
+                 let llevar = pedido.value.trim();
+                 if (llevar) {
+                     localStorage.setItem("llevar", llevar);
+                     pedido.value = "";
+                     pedido.focus();
+                 }
+
+                 window.location.href = "VistaPedido.html";
+             });
+             function cargarNumeroPedido() {
+                 const g = localStorage.getItem("contar");
+                 if (!g) {
+                     localStorage.setItem("contar", "0");
+                 }
+                 actualizarNumeroPedido();
+                 guardarDatos();
+             }
+             function actualizarNumeroPedido() {
+                 const valor = localStorage.getItem("contar");
+                 numeroPedisdo.textContent = valor;
+             }
+         </script>
+         </main>
+</body>
+</html>
